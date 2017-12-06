@@ -1,10 +1,11 @@
 
 
-# Formations Ynov `Docker Overview Intro`
+# Formations Ynov
+## `Docker Overview Intro`
 
-Link : <https://github.com/sphinxgaia/ynov-formations/docker_overview_intro>
+Link : <https://github.com/sphinxgaia/ynov-formations/tree/master/docker_overview_intro>
 
-## Author : Jérôme Masson <sphinxgaia@jeromemasson.fr>
+### Author : Jérôme Masson <sphinxgaia@jeromemasson.fr>
 
 
 --------
@@ -51,9 +52,10 @@ Link : <https://github.com/sphinxgaia/ynov-formations/docker_overview_intro>
 ## Objectif de la formation
 
 - [x] Qu'est ce que c'est Docker ?
+- [x] Comprendre le fonctionnement
 - [x] Comment installer Docker
 - [x] Les commandes de base
-- [x] Comprendre le fonctionnement
+- [x] Les containers Docker
 - [x] Les images Docker
 - [x] Les volumes Docker
 - [x] Les réseaux Docker

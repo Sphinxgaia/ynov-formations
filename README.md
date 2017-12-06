@@ -28,11 +28,11 @@
 
 
 # Pré-requis Global Docker
-Are compatible with docker : check your kernel config
+Are you compatible with docker ? check your kernel config
 
 ~~~bash
 
-wget https://github.com/sphinxgaia/ynov-formations/checkconfig.sh
+wget https://github.com/Sphinxgaia/ynov-formations/tree/master/Scripts/checkconfig.sh
 
 ~~~
 
@@ -44,7 +44,7 @@ wget https://github.com/sphinxgaia/ynov-formations/checkconfig.sh
 
 ~~~bash
 
-git clone https://github.com/sphinxgaia/ynov-formations.git
+git clone https://github.com/Sphinxgaia/ynov-formations.git
 cd docker_overview_intro/
 
 ~~~
@@ -53,7 +53,7 @@ cd docker_overview_intro/
 
 Pour suivre la formation merci de vous conformer aux prérequis de la formation
 
-> <https://github.com/sphinxgaia/ynov-formations/docker_overview_intro/README.md>
+> <https://github.com/Sphinxgaia/ynov-formations/tree/master/docker_overview_intro/README.md>
 
 ## Format
 
@@ -64,9 +64,10 @@ Pour suivre la formation merci de vous conformer aux prérequis de la formation
 ## Objectif de la formation
 
 - [x] Qu'est ce que c'est Docker ?
+- [x] Comprendre le fonctionnement
 - [x] Comment installer Docker
 - [x] Les commandes de base
-- [x] Comprendre le fonctionnement
+- [x] Les containers Docker
 - [x] Les images Docker
 - [x] Les volumes Docker
 - [x] Les réseaux Docker
