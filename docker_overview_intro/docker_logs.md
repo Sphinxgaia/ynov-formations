@@ -15,7 +15,7 @@
 ## /!\ Attention /!\
 
 - le PID contrôle l'arrêt du container
-- STDOU ou fichier de logs
+- STDOUT ou fichier de logs
 
 
 --------
@@ -24,5 +24,5 @@
 ## Docker logs
 
 La commande `Docker logs` :
-- permet de voir les logs du stoud d'un container
+- permet de voir les logs du STDOUT d'un container
 - diverses options : (-f, --since, --timestamp)

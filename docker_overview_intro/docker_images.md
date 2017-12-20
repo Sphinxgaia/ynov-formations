@@ -34,7 +34,7 @@ Les images peuvent :
 - 1 container = plusieurs couche
 - 1 couche = 1 Image parente
 - Copy on write
-- Les layers sont tujours en read-only
+- Les layers sont toujours en read-only
 
 
 ![image_layer_single_VE](docker_overview_intro/img//image_layer_single_VE.png)

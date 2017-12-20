@@ -38,22 +38,20 @@ wget https://github.com/Sphinxgaia/ynov-formations/tree/master/Scripts/checkconf
 
 
 
-# Formation Docker Overview Intro
+# Formation Docker Overview
 
 ## Avant propos
 
-~~~bash
+Voir le README.md dans chaque dossier pour comprendre son fonctionnement
 
-git clone https://github.com/Sphinxgaia/ynov-formations.git
-cd docker_overview_intro/
+## Convertion OVF en HYPER-V
 
+~~~powershell
+# Import the Converter Powershell Module
+Import-Module "C:\Program Files\Microsoft Virtual Machine Converter\MvmcCmdlet.psd1"
+# Convert the VMware .vmdk to a Hyper-V .vhdx
+ConvertTo-MvmcVirtualHardDisk -SourceLiteralPath "D:\Debian8\Debian8-disk1.vmdk" -DestinationLiteralPath "D:\Debian8.vhdx" -VhdType DynamicHardDisk -VhdFormat Vhdx
 ~~~
-
-## Pré-requis de la formation
-
-Pour suivre la formation merci de vous conformer aux prérequis de la formation
-
-> <https://github.com/Sphinxgaia/ynov-formations/tree/master/docker_overview_intro/README.md>
 
 ## Format
 
@@ -63,12 +61,25 @@ Pour suivre la formation merci de vous conformer aux prérequis de la formation
 
 ## Objectif de la formation
 
-- [x] Qu'est ce que c'est Docker ?
-- [x] Comprendre le fonctionnement
-- [x] Comment installer Docker
-- [x] Les commandes de base
-- [x] Les containers Docker
-- [x] Les images Docker
-- [x] Les volumes Docker
-- [x] Les réseaux Docker
-- [x] Les logs Docker
+- Introduction
+  - [x] Qu'est ce que c'est Docker ?
+  - [x] Comprendre le fonctionnement
+  - [x] Comment installer Docker
+  - [x] Les commandes de base
+  - [x] Les containers Docker
+  - [x] Les images Docker
+  - [x] Les volumes Docker
+  - [x] Les réseaux Docker
+  - [x] Les logs Docker
+
+- Advanced
+  - Mixte
+    - [x] Création d'une image docker
+    - [x] Auto build avec docker hub
+    - [x] Reverse Proxy / Proxy
+    - [x] Registry
+    - [x] Orchestration
+  - Infra
+    - [x] CI
+  - Dev
+    - [x] Microservices
