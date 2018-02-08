@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  whoami:
+   image: emilevauge/whoami
+   ports:
+     - 80
+   environment:
+     - SERVICE_PORTS=80
+   deploy:
+     replicas: 2
+   networks:
+     - web
+
+  proxy:
+    image: dockercloud/haproxy
+    depends_on:
+      - whoami
+    environment:
+      - BALANCE=leastconn
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 80:80
+    networks:
+      - web
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+
+networks:
+  web:
+    driver: overlay

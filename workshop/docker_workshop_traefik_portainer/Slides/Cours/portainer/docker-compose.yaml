@@ -1,0 +1,70 @@
+version: "3.3"
+
+services:
+  traefik:
+    image: traefik:1.5-alpine
+    networks:
+      - traefik
+    command: --web --docker.domain=traefik --docker.watch --docker.endpoint=unix://var/run/docker.sock -l DEBUG
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8081:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - $PWD/traefik.toml:/etc/traefik/traefik.toml
+      - acme:/etc/traefik/acme
+      - logs:/var/log
+    labels:
+      - "traefik.frontend.rule=Host:traefik.dev.retrainer.me"
+      - "traefik.port=8080"
+      - "traefik.backend=traefik"
+      - "traefik.frontend.entryPoints=https"
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+
+  portainer:
+    image: portainer/portainer:1.15.5
+    depends_on:
+      - traefik
+    networks:
+      - traefik
+    labels:
+      - "traefik.frontend.rule=Host:portainer.dev.retrainer.me"
+      - "traefik.port=9000"
+      - "traefik.backend=portainer"
+      - "traefik.frontend.entryPoints=http,https"
+    volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - portainer:/data
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+
+volumes:
+  portainer:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /data/portainer/data
+
+  acme:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /data/traefik/acme
+
+  logs:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /data/traefik/logs
+
+
+networks:
+  traefik:
+    driver: overlay
