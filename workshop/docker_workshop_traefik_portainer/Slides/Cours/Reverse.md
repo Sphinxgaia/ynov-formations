@@ -70,8 +70,9 @@ networks:
 
 - Lancer le container
 ~~~bash
-docker-compose ud -d
+docker-compose up -d
 ~~~
+
 
 --------
 
@@ -79,7 +80,7 @@ docker-compose ud -d
 # Test d'un contenu
 
 ~~~dockerfile
-version: '2'
+version: '3'
 
 services:
   whoami:

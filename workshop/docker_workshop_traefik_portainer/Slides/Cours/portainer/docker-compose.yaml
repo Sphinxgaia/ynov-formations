@@ -5,7 +5,7 @@ services:
     image: traefik:1.5-alpine
     networks:
       - traefik
-    command: --web --docker.domain=traefik --docker.watch --docker.endpoint=unix://var/run/docker.sock -l DEBUG
+    command: --web --docker.domain=docker.localhost --docker.watch --docker.endpoint=unix://var/run/docker.sock -l DEBUG
     ports:
       - "80:80"
       - "443:443"
@@ -16,7 +16,7 @@ services:
       - acme:/etc/traefik/acme
       - logs:/var/log
     labels:
-      - "traefik.frontend.rule=Host:traefik.dev.retrainer.me"
+      - "traefik.frontend.rule=Host:traefik.docker.localhost"
       - "traefik.port=8080"
       - "traefik.backend=traefik"
       - "traefik.frontend.entryPoints=https"
@@ -31,7 +31,7 @@ services:
     networks:
       - traefik
     labels:
-      - "traefik.frontend.rule=Host:portainer.dev.retrainer.me"
+      - "traefik.frontend.rule=Host:portainer.docker.localhost"
       - "traefik.port=9000"
       - "traefik.backend=portainer"
       - "traefik.frontend.entryPoints=http,https"
